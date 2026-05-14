@@ -1,12 +1,9 @@
 import { useWheel } from "../../hooks/useWheel";
 import WinnerModal from "../modals/WinnerModal";
 
-export default function SpinWheel({ entries, settings, onWinner }) {
+export default function SpinWheel({ entries, settings }) {
   const { canvasRef, spin, winner, spinning, resetWinner } = useWheel(entries, settings);
 
-  const handleWin = (w) => {
-    onWinner?.(w);
-  };
 
   return (
     <div className="stack stack-md" style={{ alignItems:"center", width:"100%" }}>

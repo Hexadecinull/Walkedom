@@ -12,7 +12,7 @@ export function useSettings() {
     try {
       const stored = JSON.parse(localStorage.getItem("walkedom-settings") || "{}");
       return { ...DEFAULTS, ...stored };
-    } catch { return DEFAULTS; }
+    } catch (_e) { return DEFAULTS; }
   });
 
   useEffect(() => {
@@ -20,7 +20,8 @@ export function useSettings() {
     applyScheme(settings.scheme);
   }, [settings]);
 
-  // also apply on mount
+  // Apply scheme on first mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { applyScheme(settings.scheme); }, []);
 
   const update = (key, value) => setSettings((s) => ({ ...s, [key]: value }));

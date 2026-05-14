@@ -158,7 +158,6 @@ export function useWheel(entries, settings = {}) {
 
       // tick sound when crossing a slice boundary
       if (entries.length > 0) {
-        const arc = (Math.PI * 2) / entries.length;
         const cur = sliceAt(s.angle);
         const prv = sliceAt(s.lastTickAngle);
         if (cur !== prv) {

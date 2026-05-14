@@ -28,7 +28,7 @@ export function playTick(volume = 0.4) {
     g.gain.setValueAtTime(volume, t);
     g.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
     osc.start(t); osc.stop(t + 0.06);
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }
 
 /** Fanfare / win sound for wheel */
@@ -48,7 +48,7 @@ export function playWheelWin(volume = 0.5) {
       osc.start(t + i * 0.1);
       osc.stop(t + i * 0.1 + 0.4);
     });
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }
 
 /** Heads sound — bright upward chime */
@@ -65,7 +65,7 @@ export function playHeads(volume = 0.5) {
     g.gain.setValueAtTime(volume, t);
     g.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
     osc.start(t); osc.stop(t + 0.45);
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }
 
 /** Tails sound — lower descending tone */
@@ -82,7 +82,7 @@ export function playTails(volume = 0.5) {
     g.gain.setValueAtTime(volume, t);
     g.gain.exponentialRampToValueAtTime(0.001, t + 0.45);
     osc.start(t); osc.stop(t + 0.5);
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }
 
 /** Dice roll rumble */
@@ -102,7 +102,7 @@ export function playDiceRoll(volume = 0.4) {
       osc.start(t + i * 0.04);
       osc.stop(t + i * 0.04 + 0.08);
     }
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }
 
 /** Number generated pop */
@@ -119,7 +119,7 @@ export function playNumberPop(volume = 0.35) {
     g.gain.setValueAtTime(volume, t);
     g.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
     osc.start(t); osc.stop(t + 0.2);
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }
 
 /** Picker result sound */
@@ -138,5 +138,5 @@ export function playPickerResult(volume = 0.4) {
       osc.start(t + i * 0.08);
       osc.stop(t + i * 0.08 + 0.3);
     });
-  } catch {}
+  } catch (_e) { /* audio unavailable */ }
 }

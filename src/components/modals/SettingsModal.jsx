@@ -51,7 +51,7 @@ export default function SettingsModal({ settings, update, onClose }) {
           <label className="check-row">
             <input type="checkbox" checked={settings.showClickHint ?? true}
               onChange={e => update("showClickHint", e.target.checked)} />
-            Show "Click to spin" hint on wheel
+            Show &ldquo;Click to spin&rdquo; hint on wheel
           </label>
         </div>
       </div>

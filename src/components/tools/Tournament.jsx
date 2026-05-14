@@ -7,7 +7,6 @@ const DEFAULT = ["Alice","Bob","Charlie","Diana","Eve","Frank","Grace","Henry"];
 export default function Tournament() {
   const [entries, setEntries] = useState(DEFAULT);
   const [rounds,  setRounds]  = useState([]);
-  const [winner,  setWinner]  = useState(null);
 
   const generate = () => {
     if (entries.length < 2) return;
@@ -29,7 +28,7 @@ export default function Tournament() {
       current = current.map(x => x ?? "TBD");
     }
     setRounds(allRounds);
-    setWinner(null);
+    
   };
 
   return (

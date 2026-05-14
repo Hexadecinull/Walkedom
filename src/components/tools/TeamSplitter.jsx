@@ -6,7 +6,7 @@ import ResultModal from "../modals/ResultModal";
 const DEFAULT = ["Alice","Bob","Charlie","Diana","Eve","Frank","Grace","Henry","Ivan","Julia"];
 const TEAM_COLORS = ["#FF3B3B","#00C853","#00B0FF","#FFD700","#AA00FF","#FF4081","#FF8C00","#1DE9B6"];
 
-export default function TeamSplitter({ settings }) {
+export default function TeamSplitter() {
   const [entries,  setEntries]  = useState(DEFAULT);
   const [numTeams, setNumTeams] = useState(2);
   const [mode,     setMode]     = useState("teams"); // teams | size

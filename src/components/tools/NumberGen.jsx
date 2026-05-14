@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { pickUnique, pickWithReplacement, randInt, shuffle } from "../../utils/random";
+import { pickUnique, randInt } from "../../utils/random";
 import { playNumberPop } from "../../utils/sound";
 import ResultModal from "../modals/ResultModal";
 

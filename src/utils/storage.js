@@ -11,7 +11,7 @@ export function parseEntryFile(text) {
       const wheel = json.wheels?.[0] ?? json;
       const entries = wheel?.wheelConfig?.entries ?? wheel?.entries ?? [];
       return entries.map((e) => (typeof e === "string" ? e : e.text)).filter(Boolean);
-    } catch {}
+    } catch (_e) { /* invalid format, skip */ }
   }
 
   // JSON array of strings
@@ -19,7 +19,7 @@ export function parseEntryFile(text) {
     try {
       const arr = JSON.parse(trimmed);
       if (Array.isArray(arr)) return arr.map(String).filter(Boolean);
-    } catch {}
+    } catch (_e) { /* invalid format, skip */ }
   }
 
   // CSV single line
